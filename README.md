@@ -31,7 +31,7 @@ This command generates two files: `syscalls.c` and `syscalls.h`.
 ## Step 2: Writing the Reverse Shell Code
 
 ### Initial Reverse Shell Using Windows Syscalls:
-Here is the initial version of the reverse shell using the Windows API:
+Here is the initial version of the reverse shell using the Windows Syscalls:
 
 ```cpp
 #include <winsock2.h>
