@@ -224,6 +224,8 @@ x86_64-w64-mingw32-g++ reverse_shell.cpp -o reverse_shell.exe -lws2_32 -static-l
 3. **Verify Connection**:
    Ensure that the reverse shell connects back to your listener.
 
+# Creating a Reverse Shell Using a Hybrid approach
+
 ## Introduction
 
 This document outlines the process of creating a reverse shell in C++ using a combination of raw syscalls and the Windows API. The goal is to leverage syscalls for process creation while maintaining reliability with API calls where necessary. This approach helps evade detection by AV (Antivirus) and EDR (Endpoint Detection and Response) systems while ensuring the reverse shell remains functional across different environments.
