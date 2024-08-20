@@ -1,5 +1,7 @@
 # Leveraging Syscalls to Evade AV/EDR in a Reverse Shell
 
+# Creating a Reverse Shell Using Windows Syscalls with (SysWhispers2)
+
 ## Introduction
 This document details the process of creating a reverse shell in C++ that leverages syscalls to evade detection by Antivirus (AV) and Endpoint Detection and Response (EDR) systems. The reverse shell initially uses standard Windows API calls, which are then replaced with direct syscalls to avoid user-mode hooks commonly implemented by AV/EDR solutions.
 
